@@ -1,0 +1,36 @@
+12
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+A B 4
+A H 8
+A K 12
+A L 1
+B C 8
+B H 11
+C D 7
+C F 4
+C I 2
+C J 3
+D E 9
+D F 14
+D K 20
+E F 10
+F G 2
+G H 1
+G I 6
+G J 3
+G L 9
+G K 2
+H I 7
+H K 2
+H L 4

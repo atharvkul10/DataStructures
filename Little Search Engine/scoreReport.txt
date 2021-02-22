@@ -1,0 +1,153 @@
+Little Search Engine Grade Report
+
+
+-----------------
+method getKeyword
+
+Test 1: sWord
+Expected Result: sword
+Your Result: sword
+Points: 2
+
+Test 2: paraphrase;
+Expected Result: paraphrase
+Your Result: paraphrase
+Points: 2
+
+Test 3: really?!?!
+Expected Result: really
+Your Result: really
+Points: 2
+
+Test 4: Between,
+Expected Result: null
+Your Result: null
+Points: 2
+
+Test 5: either:or
+Expected Result: null
+Your Result: null
+Points: 2
+
+Total: 10
+-----------------
+method loadKeywordsFromDocument
+
+Test 1: Lots of noise - pohlx.txt
+Results match
+Points: 5
+
+Test 2: Lots of keywords - Tyger.txt
+Results match
+Points: 5
+
+Test 3: Repetition of keywords - jude.txt
+Results match
+Points: 5
+
+Total: 15
+---------------------------
+method insertLastOccurrence
+
+Test 1: Extreme left insertion
+
+Occurrence list:
+[(d1.txt,82), (d2.txt,76), (d3.txt,71), (d4.txt,71), (d5.txt,70), (d6.txt,65), (d7.txt,61), (d8.txt,56), (d9.txt,54), (d10.txt,51), (d11.txt,48), (d12.txt,45), (d13.txt,41), (d14.txt,36), (d15.txt,34), (d16.txt,30), (d17.txt,25), (d18.txt,20), (d19.txt,20), (d20.txt,18), (d21.txt,17), (d22.txt,17), (d23.txt,14), (d24.txt,12), (d25.txt,85)]
+Expected result: [11, 5, 2, 0]
+Result: [11, 5, 2, 0]
+Points: 2
+
+Test 2: Extreme right insertion
+
+Occurrence list:
+[(d1.txt,82), (d2.txt,76), (d3.txt,71), (d4.txt,71), (d5.txt,70), (d6.txt,65), (d7.txt,61), (d8.txt,56), (d9.txt,54), (d10.txt,51), (d11.txt,48), (d12.txt,45), (d13.txt,41), (d14.txt,36), (d15.txt,34), (d16.txt,30), (d17.txt,25), (d18.txt,20), (d19.txt,20), (d20.txt,18), (d21.txt,17), (d22.txt,17), (d23.txt,14), (d24.txt,12), (d25.txt,4)]
+Expected result: [11, 17, 20, 22, 23]
+Result: [11, 17, 20, 22, 23]
+Points: 2
+
+Test 3: In between insertion 1
+
+Occurrence list:
+[(d1.txt,82), (d2.txt,76), (d3.txt,71), (d4.txt,71), (d5.txt,70), (d6.txt,65), (d7.txt,61), (d8.txt,56), (d9.txt,54), (d10.txt,51), (d11.txt,48), (d12.txt,45), (d13.txt,41), (d14.txt,36), (d15.txt,34), (d16.txt,30), (d17.txt,25), (d18.txt,20), (d19.txt,20), (d20.txt,18), (d21.txt,17), (d22.txt,17), (d23.txt,14), (d24.txt,12), (d25.txt,50)]
+Expected result: [11, 5, 8, 9, 10]
+Result: [11, 5, 8, 9, 10]
+Points: 2
+
+Test 4: In between insertion 2
+
+Occurrence list:
+[(d1.txt,82), (d2.txt,76), (d3.txt,71), (d4.txt,71), (d5.txt,70), (d6.txt,65), (d7.txt,61), (d8.txt,56), (d9.txt,54), (d10.txt,51), (d11.txt,48), (d12.txt,45), (d13.txt,41), (d14.txt,36), (d15.txt,34), (d16.txt,30), (d17.txt,25), (d18.txt,20), (d19.txt,20), (d20.txt,18), (d21.txt,17), (d22.txt,17), (d23.txt,14), (d24.txt,12), (d25.txt,26)]
+Expected result: [11, 17, 14, 15, 16]
+Result: [11, 17, 14, 15, 16]
+Points: 2
+
+Test 5: Insertion with a frequency match
+
+Occurrence list:
+[(d1.txt,82), (d2.txt,76), (d3.txt,71), (d4.txt,71), (d5.txt,70), (d6.txt,65), (d7.txt,61), (d8.txt,56), (d9.txt,54), (d10.txt,51), (d11.txt,48), (d12.txt,45), (d13.txt,41), (d14.txt,36), (d15.txt,34), (d16.txt,30), (d17.txt,25), (d18.txt,20), (d19.txt,20), (d20.txt,18), (d21.txt,17), (d22.txt,17), (d23.txt,14), (d24.txt,12), (d25.txt,17)]
+Expected result: [11, 17, 20]
+Result: [11, 17, 20]
+Points: 2
+
+Total: 10
+------------------
+method mergeKeywords
+
+Test 1: Single document - metamorphosis.txt
+Points: 7
+
+Test 2: 2 documents with no intersection - Tyger.txt, metamorphosis.txt
+Points: 8
+
+Test 3: 2 documents with a few intersections - pohlx.txt, pohly.txt
+Points: 8
+
+Total: 23
+---------------
+method top5Search
+
+Test 1 (strange,case): No matches for either
+
+null
+null
+Your result:null
+Expected result: No list
+Points: 2
+
+Test 2 (color,strange): No match for 1 keyword, but more than 5 total matches
+
+[(doc5.txt,6), (doc3.txt,5), (doc7.txt,4), (doc2.txt,4), (doc4.txt,2), (doc1.txt,1)]
+null
+Your result:[doc5.txt, doc3.txt, doc7.txt, doc2.txt, doc4.txt]
+Expected result: [doc5.txt, doc3.txt, doc7.txt, doc2.txt, doc4.txt]
+Points: 3
+
+Test 3 (orange,weird): Matches on both keywords, no common docs, more than 5 total matches
+
+[(doc5.txt,8), (doc2.txt,5), (doc7.txt,3), (doc3.txt,2), (doc1.txt,1)]
+[(doc6.txt,6), (doc8.txt,4)]
+Your result:[doc5.txt, doc6.txt, doc2.txt, doc8.txt, doc7.txt]
+Expected result: [doc5.txt, doc6.txt, doc2.txt, doc8.txt, doc7.txt]
+Points: 5
+
+Test 4 (red,orange): 4 common docs, no common result frequencies in top 5, more than 5 total matches
+
+[(doc3.txt,7), (doc2.txt,6), (doc4.txt,4), (doc1.txt,2), (doc7.txt,1), (doc6.txt,1)]
+[(doc5.txt,8), (doc2.txt,5), (doc7.txt,3), (doc3.txt,2), (doc1.txt,1)]
+Your result:[doc5.txt, doc3.txt, doc2.txt, doc4.txt, doc7.txt]
+Expected result: [doc5.txt, doc3.txt, doc2.txt, doc4.txt, doc7.txt]
+Points: 6
+
+Test 5 (red,car): 2 docs in different lists with the same frequency, more than 5 results
+
+[(doc3.txt,7), (doc2.txt,6), (doc4.txt,4), (doc1.txt,2), (doc7.txt,1), (doc6.txt,1)]
+[(doc1.txt,10), (doc3.txt,8), (doc7.txt,5), (doc6.txt,4), (doc4.txt,2)]
+Your result:[doc1.txt, doc3.txt, doc2.txt, doc7.txt, doc4.txt]
+Expected result: [doc1.txt, doc3.txt, doc2.txt, doc7.txt, doc4.txt]
+Points: 6
+
+Total: 22
+
+------------------
+
+Total Points = 80/80

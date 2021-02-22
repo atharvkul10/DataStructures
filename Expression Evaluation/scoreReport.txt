@@ -1,0 +1,44 @@
+Expression Evaluation Grade Report
+
+
+
+---------- Method makeVariableLists ------------
+
+[ Test Case 6 (0/2) ] : incorrect result
+	expected vars ArrayList: [B]
+	    your vars ArrayList: [B, B]
+
+[ Test Case 9 (0/3) ] : incorrect result
+	expected vars ArrayList: [b, c, a, z]
+	    your vars ArrayList: [b, c, a, z, a]
+
+
+makeVariableLists ........... 15/20
+
+
+
+---------- Method evaluate ------------
+
+[ Test Case 5 (0/2) ] : threw exception
+
+[ Test Case 7 (0/2) ] : incorrect result
+	expected result: 3.0
+	    your result: -5.0
+
+[ Test Case 8 (0/4) ] : threw exception
+
+[ Test Case 9 (0/2) ] : threw exception
+
+[ Test Case 12 (0/4) ] : incorrect result
+	expected result: 0.0
+	    your result: -8.0
+
+[ Test Case 18 (0/6) ] : threw exception
+
+
+evaluate .................... 40/60
+
+
+----------------------------------------
+
+Total Points: 55/80
